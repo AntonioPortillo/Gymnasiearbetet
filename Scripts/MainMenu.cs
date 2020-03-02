@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
         if (FadeInPanel != null)
         {
             GameObject panel = Instantiate(FadeInPanel, Vector3.zero, Quaternion.identity) as GameObject;
-            Destroy(panel, 1);
+            Destroy(panel, 1); //man skapar en klon object som sedan förstörs när den har blivit använd. I detta fall är det en fade in panel som är animerad som förstörs när den har spelats.
         }
     }
     
@@ -24,9 +24,9 @@ public class MainMenu : MonoBehaviour
         {
             Instantiate(FadeOutPanel, Vector3.zero, Quaternion.identity);
         }
-        yield return new WaitForSeconds(FadeWait);
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("SampleScene");
-        while (!asyncOperation.isDone)
+        yield return new WaitForSeconds(FadeWait); //hur långt tid man ska vänta med faden
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("SampleScene"); //vilken scen som ska öppnas
+        while (!asyncOperation.isDone) //när laddningen av scenen är klar ska fade börjas. 
         {
             yield return null;
         }
@@ -38,6 +38,6 @@ public class MainMenu : MonoBehaviour
 
     public void QuitToDesktop()
     {
-        Application.Quit();
+        Application.Quit(); // För att stänga av spelet. 
     }
 }
