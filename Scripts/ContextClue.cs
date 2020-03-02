@@ -8,7 +8,7 @@ public class ContextClue : MonoBehaviour
     public bool contextActive = false;
 
    
-    public void ChangeContext()
+    public void ChangeContext() // Man skapar en signal som ska roppa på den här funktionen. Signal är en script som signalerar till eventuella att något ska hända.
     {
         contextActive = !contextActive;
 
