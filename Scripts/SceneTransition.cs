@@ -37,7 +37,7 @@ public class SceneTransition : MonoBehaviour
     {
         if(other.CompareTag("Player") && !other.isTrigger)
         {
-            playerStorage.initialValue = playerPosition;
+            playerStorage.initialValue = playerPosition; //På detta sätt kan man få nya värden på spelarens position när man hamnar i en annan scen.
             StartCoroutine(FadeCo());
            
         }
@@ -62,7 +62,7 @@ public class SceneTransition : MonoBehaviour
         }
     }
     
-    public void ResetCameraBounds()
+    public void ResetCameraBounds() //fixar Koordinat max och min i både X- och Y-led.
     {
         cameraMax.initialValue = cameraNewMax;
         cameraMin.initialValue = cameraNewMin;
