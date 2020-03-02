@@ -58,7 +58,7 @@ public class BoundedNPC : Sign1
         }
     }
 
-    private void ChooseDifferentDirection()
+    private void ChooseDifferentDirection() // metod för att sätta ihop switchen, move() och UpdateAnimation().
     {
         Vector3 temp = directionVector;
         ChangeDirection();
@@ -70,7 +70,7 @@ public class BoundedNPC : Sign1
         }
     }
 
-    private void Move()
+    private void Move() //rörelsescriptet
     {
         Vector3 temp = myTransform.position + directionVector * speed * Time.deltaTime;
         if (bounds.bounds.Contains(temp))
@@ -85,7 +85,7 @@ public class BoundedNPC : Sign1
     }  
     void ChangeDirection()
     {
-        int direction = Random.Range(0, 4);
+        int direction = Random.Range(0, 4); //switchen används för att skapa de 4 olika alternativ som npc kan röra sig
         switch(direction)
         {
             case 0:
@@ -106,7 +106,7 @@ public class BoundedNPC : Sign1
         }
         UpdateAnimation();
     }
-    void UpdateAnimation()
+    void UpdateAnimation() //animation för respektive rörelse
     {
         anim.SetFloat("Horizontal", directionVector.x);
         anim.SetFloat("Vertical", directionVector.y);
