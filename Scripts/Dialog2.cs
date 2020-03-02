@@ -11,7 +11,7 @@ public class Dialog2 : Interactable
    
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.F) && playerInRange) //För att aktivera dialogen (funktionen) trycker man på F
         { 
             if(dialogBox.activeInHierarchy)
             {
